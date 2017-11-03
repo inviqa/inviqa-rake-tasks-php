@@ -1,6 +1,10 @@
 namespace :php do
   def parse_php_args(args)
-    args = args[2..-1] if args.length > 2
+    if args.length > 2
+      args = args[2..-1]
+    elsif args.length == 1
+      args = args[1..-1]
+    end
     args
   end
 
